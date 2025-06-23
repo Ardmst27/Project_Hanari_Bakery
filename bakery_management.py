@@ -1,7 +1,7 @@
 # File: bakery_management.py
 
-from typing import List
 from product_classes import *
+from typing import List
 
 class SistemProduksi:
     """Class untuk mengelola sistem produksi bakery"""
