@@ -100,7 +100,7 @@ class MenuInterface:
             except Exception as e:
                 print(f"Terjadi error: {e}")
 
-# Program utama
+# Program utama kitaaa
 if __name__ == "__main__":
     print("Memulai Sistem Informasi Produksi Hanari Bakery...")
     app = MenuInterface()
