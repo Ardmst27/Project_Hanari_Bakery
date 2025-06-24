@@ -6,6 +6,7 @@ from typing import List
 class SistemProduksi:
     """Class untuk mengelola sistem produksi bakery"""
     
+    # REVISI: Memperbaiki kesalahan penulisan dari init menjadi _init_
     def _init_(self):
         self.produk_list: List[ProdukRoti] = [] 
         self.init_produk()
@@ -19,13 +20,11 @@ class SistemProduksi:
             Muffin()
         ]
     
-    # REVISI 1: Menambahkan kembali metode yang hilang
     def tambah_produk(self, produk: ProdukRoti):
         """Menambahkan produk baru ke dalam daftar produk."""
         self.produk_list.append(produk)
         print(f"\nProduk '{produk.nama}' berhasil ditambahkan!")
 
-    # REVISI 2: Menyempurnakan metode yang sudah ada
     def tampilkan_semua_produk(self):
         """Menampilkan semua produk yang tersedia"""
         print("\n=== DAFTAR PRODUK HANARI BAKERY ===")

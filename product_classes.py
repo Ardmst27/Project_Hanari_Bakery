@@ -2,6 +2,10 @@
 
 from abc import ABC, abstractmethod
 
+# =================================================
+# SECTION 1: INTERFACE & ABSTRACT CLASS DEFINITIONS
+# =================================================
+
 class BisaMengembang(ABC):
     """Interface untuk produk yang memerlukan proses pengembangan."""
     @abstractmethod
@@ -38,13 +42,8 @@ class ProdukRoti(ABC):
 class RotiManis(ProdukRoti, BisaMengembang, PerluTopping):
     """Class untuk produk Roti Manis."""
     
-    def __init__(self):
-        super().__init__(
-            kode="RM001",
-            nama="Roti Manis",
-            biaya_produksi=3500.0,
-            harga_jual=8000.0
-        )
+    def __init__(self, kode: str = "RM001", nama: str = "Roti Manis", biaya_produksi: float = 3500.0, harga_jual: float = 8000.0):
+        super().__init__(kode, nama, biaya_produksi, harga_jual)
 
     def tampilkan_info(self):
         return f"Produk: {self.nama} ({self.kode}) | Harga: Rp {self.harga_jual:,.2f}"
@@ -58,13 +57,8 @@ class RotiManis(ProdukRoti, BisaMengembang, PerluTopping):
 class Croissant(ProdukRoti, BisaMengembang):
     """Class untuk produk Croissant."""
     
-    def __init__(self):
-        super().__init__(
-            kode="CR001",
-            nama="Croissant",
-            biaya_produksi=4000.0,
-            harga_jual=12000.0
-        )
+    def __init__(self, kode: str = "CR001", nama: str = "Croissant", biaya_produksi: float = 4000.0, harga_jual: float = 12000.0):
+        super().__init__(kode, nama, biaya_produksi, harga_jual)
     
     def tampilkan_info(self):
         return f"Produk: {self.nama} ({self.kode}) | Harga: Rp {self.harga_jual:,.2f}"
@@ -75,13 +69,8 @@ class Croissant(ProdukRoti, BisaMengembang):
 class ButterCookies(ProdukRoti, PerluTopping):
     """Class untuk Butter Cookies."""
     
-    def __init__(self):
-        super().__init__(
-            kode="BC001",
-            nama="Butter Cookies",
-            biaya_produksi=2500.0,
-            harga_jual=6000.0
-        )
+    def __init__(self, kode: str = "BC001", nama: str = "Butter Cookies", biaya_produksi: float = 2500.0, harga_jual: float = 6000.0):
+        super().__init__(kode, nama, biaya_produksi, harga_jual)
 
     def tampilkan_info(self):
         return f"Produk: {self.nama} ({self.kode}) | Harga: Rp {self.harga_jual:,.2f}"
@@ -92,13 +81,8 @@ class ButterCookies(ProdukRoti, PerluTopping):
 class Muffin(ProdukRoti, PerluTopping):
     """Class untuk Muffin."""
     
-    def __init__(self):
-        super().__init__(
-            kode="MF001",
-            nama="Muffin",
-            biaya_produksi=3000.0,
-            harga_jual=7500.0
-        )
+    def __init__(self, kode: str = "MF001", nama: str = "Muffin", biaya_produksi: float = 3000.0, harga_jual: float = 7500.0):
+        super().__init__(kode, nama, biaya_produksi, harga_jual)
     
     def tampilkan_info(self):
         return f"Produk: {self.nama} ({self.kode}) | Harga: Rp {self.harga_jual:,.2f}"
