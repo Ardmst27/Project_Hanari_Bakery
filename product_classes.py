@@ -2,6 +2,10 @@
 
 from abc import ABC, abstractmethod
 
+# =================================================
+# SECTION 1: INTERFACE & ABSTRACT CLASS DEFINITIONS
+# =================================================
+
 class BisaMengembang(ABC):
     """Interface untuk produk yang memerlukan proses pengembangan."""
     @abstractmethod
@@ -35,14 +39,9 @@ class ProdukRoti(ABC):
     def pemanggangan(self):
         print(f"[{self.nama}] Melakukan proses pemanggangan di oven...")
 
-# File: product_classes.py
-
-# ... (kelas abstrak tetap sama) ...
-
 class RotiManis(ProdukRoti, BisaMengembang, PerluTopping):
     """Class untuk produk Roti Manis."""
     
-    # Terima parameter dengan nilai default
     def __init__(self, kode: str = "RM001", nama: str = "Roti Manis", biaya_produksi: float = 3500.0, harga_jual: float = 8000.0):
         super().__init__(kode, nama, biaya_produksi, harga_jual)
 
@@ -58,7 +57,6 @@ class RotiManis(ProdukRoti, BisaMengembang, PerluTopping):
 class Croissant(ProdukRoti, BisaMengembang):
     """Class untuk produk Croissant."""
     
-    # Terima parameter dengan nilai default
     def __init__(self, kode: str = "CR001", nama: str = "Croissant", biaya_produksi: float = 4000.0, harga_jual: float = 12000.0):
         super().__init__(kode, nama, biaya_produksi, harga_jual)
     
@@ -71,7 +69,6 @@ class Croissant(ProdukRoti, BisaMengembang):
 class ButterCookies(ProdukRoti, PerluTopping):
     """Class untuk Butter Cookies."""
     
-    # Terima parameter dengan nilai default
     def __init__(self, kode: str = "BC001", nama: str = "Butter Cookies", biaya_produksi: float = 2500.0, harga_jual: float = 6000.0):
         super().__init__(kode, nama, biaya_produksi, harga_jual)
 
@@ -84,7 +81,6 @@ class ButterCookies(ProdukRoti, PerluTopping):
 class Muffin(ProdukRoti, PerluTopping):
     """Class untuk Muffin."""
     
-    # Terima parameter dengan nilai default
     def __init__(self, kode: str = "MF001", nama: str = "Muffin", biaya_produksi: float = 3000.0, harga_jual: float = 7500.0):
         super().__init__(kode, nama, biaya_produksi, harga_jual)
     
