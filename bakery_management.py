@@ -6,7 +6,8 @@ from typing import List
 class SistemProduksi:
     """Class untuk mengelola sistem produksi bakery"""
     
-    def __init__(self):
+    # REVISI: Memperbaiki kesalahan penulisan dari init menjadi _init_
+    def _init_(self):
         self.produk_list: List[ProdukRoti] = [] 
         self.init_produk()
     
@@ -19,12 +20,20 @@ class SistemProduksi:
             Muffin()
         ]
     
+    def tambah_produk(self, produk: ProdukRoti):
+        """Menambahkan produk baru ke dalam daftar produk."""
+        self.produk_list.append(produk)
+        print(f"\nProduk '{produk.nama}' berhasil ditambahkan!")
+
     def tampilkan_semua_produk(self):
         """Menampilkan semua produk yang tersedia"""
         print("\n=== DAFTAR PRODUK HANARI BAKERY ===")
         print("-" * 50)
-        for i, produk in enumerate(self.produk_list, 1):
-            print(f"{i}. {produk.tampilkan_info()}")
+        if not self.produk_list:
+            print("Belum ada produk yang terdaftar.")
+        else:
+            for i, produk in enumerate(self.produk_list, 1):
+                print(f"{i}. {produk.tampilkan_info()}")
         print("-" * 50)
 
     def hitung_estimasi_profit(self, kode_produk: str, jumlah: int):
