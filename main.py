@@ -105,6 +105,9 @@ class MenuInterface:
             
             if self.running:
                 input("\nTekan Enter untuk melanjutkan...")
+                
+# teknik mainnnn
+# -----------------------
 
 if __name__ == "__main__":
     app = MenuInterface()
